@@ -9,3 +9,11 @@ The problem so far is trivial, most of my time here is spent learning how to get
 For part 2, the natural solution is a heap.  I found a min-heap and couldn't figure out how to modify it, so I just stored the negative of each value.
 
 I also learned that `go run main.go` won't load other files, even if they're in the same package.
+
+# 02
+
+Part 1
+Another easy problem, just needed to learn to do more with maps and 2d arrays.
+
+Part 2
+Pretty easy, just use maps to select what to play and get the points.
