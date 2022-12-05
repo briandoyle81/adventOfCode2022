@@ -52,8 +52,8 @@ func main() {
 	overLappedPairs := 0
 
 	for _, assignment := range data {
-		if (assignment[0] <= assignment[2] && assignment[1] >= assignment[3]) ||
-		   (assignment[2] <= assignment[0] && assignment[3] >= assignment[1]) {
+		if (assignment[1] >= assignment[2] && assignment[0] <= assignment[3]) ||
+		   (assignment[3] >= assignment[0] && assignment[2] <= assignment[1]) {
 			overLappedPairs++
 		   }
 	}
