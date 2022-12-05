@@ -17,3 +17,17 @@ Another easy problem, just needed to learn to do more with maps and 2d arrays.
 
 Part 2
 Pretty easy, just use maps to select what to play and get the points.
+
+# Day 3
+
+Part 1
+Annoying that there isn't a set and related functions.  Need to ask someone how they normally handle things like this.
+
+Part 2
+Also relatively simple, just making and comparing sets/dicts to find commonality.  O(n) solution via adding triplets to sets, then comparing sets 1&2, then that union to 3.
+
+Got tripped up by using range with strings giving back index, then value, and not just value like I expected.
+
+# Day 4
+
+At first glance, this is basically frequency queries. -- Yup, it is

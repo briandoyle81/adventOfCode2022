@@ -9,7 +9,7 @@ import (
 
 
 func importData() [][]rune{
-	file, err := os.Open("data.txt")
+	file, err := os.Open("test-data.txt")
 
 	if err != nil {
 		fmt.Println(err)
