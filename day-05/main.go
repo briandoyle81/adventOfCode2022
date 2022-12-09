@@ -88,6 +88,49 @@ func printCrates(crates map[int][]rune, lastIndex int) {
 	}
 }
 
+// Part 1
+// func main() {
+// 	instructions, crates, lastIndex := importData()
+
+// 	printCrates(crates, lastIndex)
+
+// 	for _, instruction := range instructions {
+// 		split := strings.Split(instruction, " ")
+
+// 		number, _ := strconv.Atoi(split[1])
+// 		from, _ := strconv.Atoi(split[3])
+// 		to, _ := strconv.Atoi(split[5])
+
+// 		if to > lastIndex {
+// 			lastIndex = to
+// 		}
+
+// 		for i := 0; i < number; i++ {
+// 			// Is there not a better way?
+// 			moved := crates[from][len(crates[from])-1]
+// 			crates[from] = crates[from][:len(crates[from])-1]
+// 			crates[to] = append(crates[to], moved)
+// 		}
+// 	}
+
+// 	final := ""
+
+// 	// Need some work to iterate through numerical keys in order
+// 	stackIndex := 1
+
+// 	for stackIndex <= lastIndex {
+// 		final = final + string(crates[stackIndex][len(crates[stackIndex])-1])
+
+// 		stackIndex++
+// 	}
+
+// 	fmt.Println(" ")
+// 	printCrates(crates, lastIndex)
+// 	fmt.Println(" ")
+// 	fmt.Println(final)
+// }
+
+// Part 2
 func main() {
 	instructions, crates, lastIndex := importData()
 
@@ -104,12 +147,12 @@ func main() {
 			lastIndex = to
 		}
 
-		for i := 0; i < number; i++ {
-			// Is there not a better way?
-			moved := crates[from][len(crates[from])-1]
-			crates[from] = crates[from][:len(crates[from])-1]
-			crates[to] = append(crates[to], moved)
-		}
+
+		moved := crates[from][len(crates[from])-(number):]
+
+		crates[from] = crates[from][:len(crates[from])-number]
+		crates[to] = append(crates[to], moved...)
+
 	}
 
 	final := ""

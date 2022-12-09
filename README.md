@@ -49,4 +49,4 @@ for i := 0; i < number; i++ {
 }
 ```
 
-My frustration continues that there's not a built in or easy way to reverse an array!!!
+Part 2 victory again.  < 5 minutes, < 5 lines of code changed
