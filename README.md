@@ -30,4 +30,23 @@ Got tripped up by using range with strings giving back index, then value, and no
 
 # Day 4
 
-At first glance, this is basically frequency queries. -- Yup, it is
+At first glance, this is basically frequency queries. -- Yup, it is.
+
+Part 2 is just a variant, 5 mins and 2 lines changed.
+
+# Day 5
+
+It's funny when it's literal.  Using a stack data structure to simulate stacks of boxes.
+
+This block annoys me.  There must be a better way to do everything here!
+
+```go
+for i := 0; i < number; i++ {
+    // Is there not a better way?
+    moved := crates[from][len(crates[from])-1]
+    crates[from] = crates[from][:len(crates[from])-1]
+    crates[to] = append(crates[to], moved)
+}
+```
+
+My frustration continues that there's not a built in or easy way to reverse an array!!!
