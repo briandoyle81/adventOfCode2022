@@ -51,15 +51,13 @@ for i := 0; i < number; i++ {
 
 Part 2 victory again.  < 5 minutes, < 5 lines of code changed
 
-# Day 5
+# Day 6
 
 Thinking maybe something sort of like an LRU cache.
 
 Ended up just storing N sized blocks in a pseudo-set each loop, probably not the most efficient
 
 Part two super victory, solution in less than 30 seconds
-
-# Day 6
 
 Relatively lazy solution that I don't think would have worked with a really large dataset.  But it worked!  On to the next!
 
