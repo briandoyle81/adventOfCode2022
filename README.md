@@ -62,3 +62,10 @@ Part two super victory, solution in less than 30 seconds
 Relatively lazy solution that I don't think would have worked with a really large dataset.  But it worked!  On to the next!
 
 # Day 7
+
+I don't think I actually need any kind of tree here.  Can just do a flat array with the full directory path as the name, kind of like what IIRC Github does.
+
+Then just use a switch to process each line.
+
+Part II
+Should have been a super victory, but I don't know how subtraction works apparently ¯\_(ツ)_/¯
