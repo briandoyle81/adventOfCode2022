@@ -69,3 +69,9 @@ Then just use a switch to process each line.
 
 Part II
 Should have been a super victory, but I don't know how subtraction works apparently ¯\_(ツ)_/¯
+
+# Day 8
+
+I smell a graph problem!
+
+Not yet, more like a holding water variant.
