@@ -79,3 +79,7 @@ Not yet, more like a holding water variant.
 Not my best work in part 2.  I think a two-cursor solution might be more efficient, but on to the next!
 
 # Day 9
+
+Messy collision-like if statements FTW!
+
+Part 2 was pretty easy once I read the rules.  Only the tail counts still!!!
