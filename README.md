@@ -75,3 +75,7 @@ Should have been a super victory, but I don't know how subtraction works apparen
 I smell a graph problem!
 
 Not yet, more like a holding water variant.
+
+Not my best work in part 2.  I think a two-cursor solution might be more efficient, but on to the next!
+
+# Day 9
