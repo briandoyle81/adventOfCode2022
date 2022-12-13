@@ -10,7 +10,7 @@ import (
 )
 
 func importData() [][]string{
-	file, err := os.Open("big-test-data.txt")
+	file, err := os.Open("data.txt")
 
 	if err != nil {
 		fmt.Println(err)
@@ -98,6 +98,7 @@ func main() {
 	cycle := 1
 	row := 0
 
+
 	pixels := make([][]bool, 6)
 	for i := range pixels {
 		pixels[i] = make([]bool, 40)
@@ -106,9 +107,9 @@ func main() {
 	drawScreen(pixels)
 
 	for _, instruction := range data {
-		// fmt.Println("Start of Cycle:", cycle, "RegisterX:", registerX)
-		fmt.Println(registerX, cycle-(40*row), "diff", int(math.Abs(float64(registerX)-float64(cycle-(40*row)))))
-		if int(math.Abs(float64(registerX)-float64(cycle-(40*row)))) <= 1 {
+		row = (cycle-1) / 40
+		col := cycle - 1 - row * 40
+		if int(math.Abs(float64(registerX)-float64(col))) <= 1 {
 			pixels[row][cycle-(40*row)-1] = true
 		}
 		// fmt.Println(instruction)
@@ -119,8 +120,9 @@ func main() {
 
 
 			cycle++
-			fmt.Println(registerX, cycle-(40*row), "diff", int(math.Abs(float64(registerX)-float64(cycle-(40*row)))))
-			if int(math.Abs(float64(registerX)-float64(cycle-(40*row)))) <= 1 {
+			row = (cycle-1) / 40
+			col := cycle - 1 - row * 40
+			if int(math.Abs(float64(registerX)-float64(col))) <= 1 {
 				pixels[row][cycle-(40*row)-1] = true
 			}
 
@@ -131,6 +133,8 @@ func main() {
 		}
 
 		cycle++
+
+
 	}
 
 	drawScreen(pixels)

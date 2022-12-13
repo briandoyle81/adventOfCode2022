@@ -83,3 +83,7 @@ Not my best work in part 2.  I think a two-cursor solution might be more efficie
 Messy collision-like if statements FTW!
 
 Part 2 was pretty easy once I read the rules.  Only the tail counts still!!!
+
+# Day 10
+
+Sort of an emulator/opcodes problem.  Got bit by not DRYing.  Still didn't dry.
