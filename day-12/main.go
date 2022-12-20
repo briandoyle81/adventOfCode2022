@@ -66,7 +66,7 @@ func printGraph(graph [][]rune) {
 	}
 }
 
-func dfs(start Position, end Position, mapData [][]rune) int {
+func dfs(start Position, end Position, mapData [][]rune) (int, []Position) {
 	qq := make([][]Position, 0)
 
 	qq = append(qq, []Position{start})
@@ -127,20 +127,21 @@ func dfs(start Position, end Position, mapData [][]rune) int {
 				found[coordToString(neighborPos)] = true
 
 				if neighborHeight == 'E' {
-					return len(newPath)-1
+					return len(newPath)-1, newPath
 				}
 
 				qq = append(qq, newPath)
 			}
 		}
 	}
-	return math.MaxInt
+	return math.MaxInt, make([]Position, 0)
 }
 
 func printPath(path []Position, mapData [][]rune) {
 	for _, pos := range path {
-		fmt.Println(string(mapData[pos.row][pos.col]), " ", pos, " -> ")
+		fmt.Print(string(mapData[pos.row][pos.col]), " ", pos, " -> ")
 	}
+	fmt.Print('\n')
 }
 
 // Part 1
@@ -164,33 +165,53 @@ func main() {
 	// printGraph(data)
 
 	shortest := math.MaxInt
+	shortestPath := make([]Position, 0)
 
 	// Just do each of four edges one at a time
 
 	for col := range data[0] {
-		length := dfs(Position{row:0, col: col}, target, data)
-		if length < shortest {
-			shortest = length
+		if data[0][col] == 'a' {
+			length, path := dfs(Position{row:0, col: col}, target, data)
+			if length < shortest {
+				shortest = length
+				shortestPath = path
+			}
 		}
 	}
 	for col := range data[len(data)-1] {
-		length := dfs(Position{row:len(data)-1, col: col}, target, data)
-		if length < shortest {
-			shortest = length
+		if data[len(data)-1][col] == 'a' {
+			length, path := dfs(Position{row:len(data)-1, col: col}, target, data)
+			if length < shortest {
+				shortest = length
+				shortestPath = path
+			}
 		}
 	}
 	for row := range data {
-		length := dfs(Position{row:row, col: 0}, target, data)
-		if length < shortest {
-			shortest = length
+		if data[row][0] == 'a' {
+			length, path := dfs(Position{row:row, col: 0}, target, data)
+			if length < shortest {
+				shortest = length
+				shortestPath = path
+			}
 		}
 	}
 	for row := range data {
-		length := dfs(Position{row:row, col: len(data[0])-1}, target, data)
-		if length < shortest {
-			shortest = length
+		if data[row][len(data[0])-1] == 'a' {
+			length, path := dfs(Position{row:row, col: len(data[0])-1}, target, data)
+			if length < shortest {
+				shortest = length
+				shortestPath = path
+			}
 		}
 	}
 
+	for _, coords := range shortestPath {
+		data[coords.row][coords.col] = '.'
+	}
+	printGraph(data)
+
+
 	fmt.Println(shortest)
+	// printPath(shortestPath, data)
 }

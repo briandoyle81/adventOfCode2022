@@ -110,4 +110,4 @@ Now the problem seems to be precision.  Moving on for now
 # Day 12
 Finally, a graph problem!
 
-Part 2 was almost a super win
+Part 2 was almost a super win.  And my alternate path was silly, just 1 different!
