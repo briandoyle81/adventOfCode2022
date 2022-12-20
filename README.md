@@ -87,3 +87,27 @@ Part 2 was pretty easy once I read the rules.  Only the tail counts still!!!
 # Day 10
 
 Sort of an emulator/opcodes problem.  Got bit by not DRYing.  Still didn't dry.
+
+# Day 11
+
+3 in the test set and 7 in the final?  Good chance best solution will be exponential!
+
+OOP approach for part 1.  Got confused because sort modifies the original slice whilst append does not.  Also got confused by range, it makes a copy of what it iterates over, so modifying needs a pointer!
+
+I've got a terrifying but for part II.  My solution works fine in the test data for 20 rounds, but is wrong for 1000!?!?!?
+
+Ahhh, because the numbers are getting large enough to overflow
+
+```
+{0 [7779672550538772604 2216785406302739480 824468344374183412 4489397885352936922 -6273093796060914110 -6528033743753191667] Operation: new = old * 19 23 2 3 5029}
+{1 [8720456354528955014 -3508958547517842620 -3984809899671244867 5712001249291805870] Operation: new = old + 6 19 2 0 4967}
+{2 [] Operation: new = old * old 13 1 3 462}
+{3 [] Operation: new = old + 3 17 0 1 5245}
+```
+
+Now the problem seems to be precision.  Moving on for now
+
+# Day 12
+Finally, a graph problem!
+
+Part 2 was almost a super win
